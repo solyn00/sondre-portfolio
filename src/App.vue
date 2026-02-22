@@ -22,18 +22,17 @@ function toggleTheme() {
 }
 
 onMounted(() => {
-  const saved = localStorage.getItem("theme") // "light" | "dark" | null
+  const saved = localStorage.getItem("theme")
 
-  if (saved === "light") isLight.value = true
-  else if (saved === "dark") isLight.value = false
-  else {
-    isLight.value =
-      window.matchMedia?.("(prefers-color-scheme: light)")?.matches ?? false
+  if (saved === "light") {
+    isLight.value = true
+  } else {
+    // default = dark
+    isLight.value = false
   }
 
   applyTheme(isLight.value)
 })
-
 watch(isLight, (val) => {
   applyTheme(val)
   localStorage.setItem("theme", val ? "light" : "dark")
@@ -423,9 +422,6 @@ body.light .themeSwitch .slider {
   background: rgba(0,0,0,0.08);
 }
 
-*/
-*/
-/* NEW wrapper */
 .projectImagesScroller {
   position: relative;
   margin: 10px 0 12px;
