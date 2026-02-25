@@ -251,7 +251,7 @@ onBeforeUnmount(() => {
             target="_blank"
             rel="noreferrer"
           >
-            <div class="docTitle">Transcript (Karakterutskrift)</div>
+            <div class="docTitle">Academic Transcript</div>
             <div class="muted">PDF</div>
           </a>
 
