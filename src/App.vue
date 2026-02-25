@@ -524,6 +524,8 @@ body.light .themeSwitch .slider {
 .projectImagesScroller {
   position: relative;
   margin: 10px 0 12px;
+  max-width: 100%;
+  overflow: hidden; /* 🔒 prevents layout widening */
 }
 
 .aboutSection .lead {
@@ -548,11 +550,12 @@ body.light .themeSwitch .slider {
   gap: 10px;
   overflow-x: auto;
   flex-wrap: nowrap;
-  padding: 2px 26px; /* space so hover zones don't cover the images */
+  padding: 2px 26px;
   scroll-behavior: smooth;
+  max-width: 100%;  /* 🔒 critical for iOS */
 
-  scrollbar-width: none;          /* Firefox */
-  -ms-overflow-style: none;       /* IE / Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .projectImages::-webkit-scrollbar {
@@ -837,7 +840,7 @@ h3 { margin: 0 0 10px; font-size: 16px; }
 html, body {
   width: 100%;
   max-width: 100%;
-  overflow-x: clip; /* better than hidden on iOS */
+  overflow-x: hidden; /* better than hidden on iOS */
 
 }
 
