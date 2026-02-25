@@ -409,6 +409,19 @@ onBeforeUnmount(() => {
   --muted: rgba(255, 255, 255, 0.70);
 }
 
+.page,
+.header,
+.main,
+.section {
+  max-width: 100%;
+}
+
+.header,
+.brand,
+.headerRight,
+.nav {
+  min-width: 0;           /* prevents flex children from forcing overflow */
+}
 
 .brand .title {
   overflow-wrap: anywhere;
@@ -823,7 +836,9 @@ h3 { margin: 0 0 10px; font-size: 16px; }
 /* iPhone: prevent any horizontal overflow that triggers "zoomed" initial scale */
 html, body {
   width: 100%;
+  max-width: 100%;
   overflow-x: clip; /* better than hidden on iOS */
+
 }
 
 /* Mobile layout (iPhone/Android) */
