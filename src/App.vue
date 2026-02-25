@@ -904,25 +904,25 @@ html, body {
 
   /* NAV — centered, wrapping */
 /* BASE (desktop first) */
+
+
 .nav {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
-  flex-wrap: nowrap;          /* 🔒 single line on desktop */
-  white-space: nowrap;
-
-  gap: 10px;                  /* slightly tighter spacing */
-  min-width: 0;
+  justify-content: center;
+  flex-wrap: wrap;        /* ✅ allows 3 + 3 */
+  white-space: normal;    /* ✅ allows wrapping */
+  gap: 12px;
+  overflow-x: visible;    /* ✅ keep your iOS fix */
 }
 
 .navLink {
-  font-size: 13px;            /* slightly smaller */
+  font-size: 16px;        /* ✅ readable on mobile */
   line-height: 1.2;
-  white-space: nowrap;        /* never wrap individual links */
+  white-space: nowrap;    /* ✅ keeps “Case Studies” together */
   text-align: center;
 }
+
 
   /* MAIN GRID — 1 column */
   .grid {
