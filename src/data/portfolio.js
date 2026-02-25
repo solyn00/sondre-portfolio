@@ -102,7 +102,7 @@ export const projects = [
        images : [
     import.meta.env.BASE_URL + "images/DAT550/confusion_matrix_rnn.png",
     import.meta.env.BASE_URL + "images/DAT550/FFNN_illustrasjon.png",
-    import.meta.env.BASE_URL + "images/DAT550/RNN-illustrasjon.jpg",
+    import.meta.env.BASE_URL + "images/DAT550/RNN-illustration.jpg",
       ],
     },
 

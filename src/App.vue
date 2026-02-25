@@ -429,9 +429,6 @@ onBeforeUnmount(() => {
 .header,
 .brand,
 .headerRight,
-
-
-
 .brand .title {
   overflow-wrap: anywhere;
 }
@@ -804,6 +801,13 @@ h3 { margin: 0 0 10px; font-size: 16px; }
   font-size: 14px;
   color: var(--muted);
   text-align: center;
+}
+
+.nav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .btn:hover { text-decoration: none; border-color: rgba(255,255,255,0.22); }
