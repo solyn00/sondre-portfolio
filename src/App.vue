@@ -450,6 +450,48 @@ onBeforeUnmount(() => {
   .docCard { grid-column: span 12; }
 }
 
+@media (max-width: 600px) {
+  .page {
+    width: 100%;
+    padding: 16px 14px 28px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .brandTop {
+    justify-content: space-between;
+  }
+
+  .brand .name {
+    font-size: 16px;
+  }
+
+  .brand .title {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .main {
+    padding-top: 14px;
+  }
+
+  .profileImage {
+    width: 150px;
+    height: 150px;
+  }
+}
+
 /* Switch container */
 .themeSwitch {
   position: relative;
@@ -637,10 +679,6 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
 }
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-}
 
 body {
   margin: 0;
@@ -662,7 +700,7 @@ body.light {
 a { color: var(--text); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-.page { max-width: 1040px; margin: 0 auto; padding: 28px 18px 40px; }
+.page { width: 100%; max-width: 1040px; margin: 0 auto; padding: 28px 18px 40px; }
 .header {
   display: flex;
   align-items: center;
