@@ -6,6 +6,7 @@ import profileImage from "./assets/profile.png"
 const sections = [
   { id: "about", label: "About" },
   { id: "projects", label: "Projects" },
+  { id: "documents", label: "Documents" },
   { id: "case-studies", label: "Case Studies" },
   { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
@@ -143,6 +144,7 @@ onBeforeUnmount(() => {
 
       </section>
 
+
       <section id="projects" class="section">
         <div class="sectionHeader">
           <h2>Projects</h2>
@@ -222,6 +224,52 @@ onBeforeUnmount(() => {
           </article>
         </div>
       </section>
+
+
+
+
+      <section id="documents" class="section documentsSection">
+        <div class="sectionHeader">
+          <h2>Documents</h2>
+          <p class="muted">Downloads: recommendations, transcript, and CV.</p>
+        </div>
+
+        <div class="docLinks">
+          <a
+            class="docCard"
+            :href="profile.links.documents.recommendations"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="docTitle">Letters of Recommendation</div>
+            <div class="muted">PDF</div>
+          </a>
+
+          <a
+            class="docCard"
+            :href="profile.links.documents.transcript"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="docTitle">Transcript (Karakterutskrift)</div>
+            <div class="muted">PDF</div>
+          </a>
+
+          <a
+            class="docCard"
+            :href="profile.links.documents.cv"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div class="docTitle">CV</div>
+            <div class="muted">PDF</div>
+          </a>
+        </div>
+      </section>
+
+
+
+
 
       <section id="case-studies" class="section">
         <div class="sectionHeader">
@@ -368,6 +416,39 @@ onBeforeUnmount(() => {
   justify-content: center;
 }
 
+.docLinks {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.docCard {
+  grid-column: span 4;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 16px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.docCard:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+  border-color: rgba(255,255,255,0.22);
+}
+
+.docTitle {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+@media (max-width: 860px) {
+  .docCard { grid-column: span 12; }
+}
 
 /* Switch container */
 .themeSwitch {

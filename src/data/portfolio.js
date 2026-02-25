@@ -5,18 +5,26 @@ export const profile = {
 
 
 intro: 
-  "I am an MSc student in Cybernetics and Robotics at the University of Stavanger, with a background in Electrical Engineering. My academic work combines control systems, automation, and applied data analysis, with hands-on experience from projects involving system modeling, simulation, and real-world implementation.",
+"I am an MSc student in Cybernetics and Robotics at the University of Stavanger, with a background in Electrical Engineering. My academic work combines control systems, automation, and applied data analysis, with hands-on experience from projects involving system modeling, simulation, and real-world implementation.",
 
 introProjects:
-  "Through my studies, I have worked on interdisciplinary projects ranging from liquid rocket engine propellant systems to predictive modeling of clinical data using machine learning. These experiences have strengthened my ability to bridge theory and practice, and to work across software, electronics, and control domains.",
+"Through my studies, I have worked on interdisciplinary projects ranging from liquid rocket engine propellant systems to predictive modeling of clinical data using machine learning. These experiences have strengthened my ability to bridge theory and practice, and to work across software, electronics, and control domains.",
 
 introMotivation:
-  "I am motivated by solving complex, real-world problems and enjoy working in structured, technical environments where reliability, clarity, and engineering quality matter. I am eager to further develop my skills in a professional setting and contribute to impactful engineering projects.",
-  
+"I am motivated by solving complex, real-world problems and enjoy working in structured, technical environments where reliability, clarity, and engineering quality matter. I am eager to further develop my skills in a professional setting and contribute to impactful engineering projects.",
+
   links: {
     email: "mailto:srlyng@gmail.com",
     linkedin: "https://www.linkedin.com/in/sondre-lyngstad-b05263293/",
     phone: "tel:+4794845006",
+    
+    documents: {
+    recommendations: import.meta.env.BASE_URL + "docs/Attester_merged.pdf",
+    transcript: import.meta.env.BASE_URL + "docs/Karakterutskrift_Digitalt_Signert.pdf",
+    cv: import.meta.env.BASE_URL + "docs/cv_engelsk.pdf",
+  },
+
+
   },
 }
 export const projects = [
