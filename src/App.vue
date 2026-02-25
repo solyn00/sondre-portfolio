@@ -868,43 +868,54 @@ html, body {
 
 }
 
-/* Mobile layout (iPhone/Android) */
 @media (max-width: 600px) {
+
+  /* PAGE */
   .page {
     width: 100%;
     padding: 16px 14px 28px;
   }
 
-  /* Header becomes stacked on mobile */
+  /* HEADER */
   .header {
     position: relative; /* disable sticky quirks on iOS */
     top: 0;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 10px;
     padding: 12px;
+    text-align: center;
     backdrop-filter: none;
   }
 
+  /* NAME + TOGGLE */
   .brandTop {
-    justify-content: space-between;
+    justify-content: center;
+    gap: 14px;
   }
 
+  /* TITLE LINE */
   .brand .title {
-    overflow-wrap: anywhere;
+    text-align: center;
+    margin-top: 4px;
   }
 
-  /* ✅ MOBILE NAV (this fixes the width / zoom issue) */
+  /* NAV — centered, wrapping */
   .nav {
     width: 100%;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     white-space: normal;
     gap: 12px;
     overflow-x: visible; /* CRITICAL */
   }
 
-  /* ✅ 1 column cards on mobile (Projects / Skills / etc.) */
+  .navLink {
+    text-align: center;
+  }
+
+  /* MAIN GRID — 1 column */
   .grid {
     grid-template-columns: 1fr;
   }
@@ -913,7 +924,7 @@ html, body {
     grid-column: 1 / -1;
   }
 
-  /* ✅ Case studies stacked vertically */
+  /* CASE STUDIES — stacked */
   .caseGrid {
     grid-template-columns: 1fr;
   }
@@ -922,18 +933,18 @@ html, body {
     grid-column: 1 / -1;
   }
 
-  /* ✅ Documents cards full width */
+  /* DOCUMENTS — full width */
   .docCard {
     grid-column: 1 / -1;
   }
 
-  /* Slightly smaller profile image */
+  /* PROFILE IMAGE */
   .profileImage {
     width: 150px;
     height: 150px;
   }
 
-  /* Smaller titles on mobile */
+  /* CARD TITLES */
   .card h3 {
     font-size: 15px;
     line-height: 1.25;
