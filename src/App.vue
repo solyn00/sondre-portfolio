@@ -826,15 +826,16 @@ html, body {
   overflow-x: clip; /* better than hidden on iOS */
 }
 
-/* Mobile header layout */
+/* Mobile layout (iPhone/Android) */
 @media (max-width: 600px) {
   .page {
     width: 100%;
     padding: 16px 14px 28px;
   }
 
+  /* Header becomes stacked on mobile */
   .header {
-    position: relative; /* disable sticky on iPhone */
+    position: relative; /* disable sticky quirks on iOS */
     top: 0;
     flex-direction: column;
     align-items: stretch;
@@ -847,15 +848,52 @@ html, body {
     justify-content: space-between;
   }
 
+  .brand .title {
+    overflow-wrap: anywhere;
+  }
+
+  /* Nav wraps instead of forcing overflow */
   .nav {
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
     white-space: normal;
+    gap: 12px;
   }
 
-  .brand .title {
-    overflow-wrap: anywhere;
+  /* ✅ 1 column cards on mobile (Projects/Skills/etc.) */
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    grid-column: 1 / -1; /* full width */
+  }
+
+  /* ✅ Case studies: Problem/Solution/Result stacked vertically */
+  .caseGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .caseGrid > div {
+    grid-column: 1 / -1;
+  }
+
+  /* ✅ Documents cards full width */
+  .docCard {
+    grid-column: 1 / -1;
+  }
+
+  /* Slightly smaller photo */
+  .profileImage {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Optional: make long titles less huge */
+  .card h3 {
+    font-size: 15px;
+    line-height: 1.25;
   }
 }
 </style>
