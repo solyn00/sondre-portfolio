@@ -409,6 +409,11 @@ onBeforeUnmount(() => {
   --muted: rgba(255, 255, 255, 0.70);
 }
 
+
+.brand .title {
+  overflow-wrap: anywhere;
+}
+
 .brandTop {
   display: flex;
   align-items: center;
@@ -446,51 +451,9 @@ onBeforeUnmount(() => {
   font-weight: 650;
 }
 
-@media (max-width: 860px) {
-  .docCard { grid-column: span 12; }
-}
 
-@media (max-width: 600px) {
-  .page {
-    width: 100%;
-    padding: 16px 14px 28px;
-  }
 
-  .header {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 12px;
-  }
 
-  .brandTop {
-    justify-content: space-between;
-  }
-
-  .brand .name {
-    font-size: 16px;
-  }
-
-  .brand .title {
-    font-size: 12px;
-    line-height: 1.3;
-  }
-
-  .nav {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 12px;
-  }
-
-  .main {
-    padding-top: 14px;
-  }
-
-  .profileImage {
-    width: 150px;
-    height: 150px;
-  }
-}
 
 /* Switch container */
 .themeSwitch {
@@ -674,12 +637,6 @@ body.light .themeSwitch .slider {
   padding-top: 16px;
 }
 
-@media (max-width: 600px) {
-  .page {
-    width: 100%;
-    padding: 16px 14px 28px;
-  }
-
   .header {
     position: relative;     /* avoid sticky quirks on iOS */
     top: 0;
@@ -708,7 +665,7 @@ body.light .themeSwitch .slider {
     justify-content: flex-start;
     gap: 12px;
   }
-}
+
 
 * { box-sizing: border-box; }
 html {
@@ -806,10 +763,6 @@ h3 { margin: 0 0 10px; font-size: 16px; }
   flex-direction: column;
 }
 
-@media (max-width: 860px) {
-  .card { grid-column: span 12; }
-  .header { position: relative; top: 0; }
-}
 
 .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 .tag {
@@ -833,9 +786,7 @@ h3 { margin: 0 0 10px; font-size: 16px; }
   margin-top: 8px;
 }
 .caseGrid > div { grid-column: span 4; }
-@media (max-width: 860px) {
-  .caseGrid > div { grid-column: span 12; }
-}
+
 
 .kicker {
   font-size: 12px;
@@ -898,4 +849,41 @@ h3 { margin: 0 0 10px; font-size: 16px; }
 
 
 .footer { padding-top: 18px; }
+
+/* iPhone: prevent any horizontal overflow that triggers "zoomed" initial scale */
+html, body {
+  width: 100%;
+  overflow-x: clip; /* better than hidden on iOS */
+}
+
+/* Mobile header layout */
+@media (max-width: 600px) {
+  .page {
+    width: 100%;
+    padding: 16px 14px 28px;
+  }
+
+  .header {
+    position: relative; /* disable sticky on iPhone */
+    top: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+    backdrop-filter: none;
+  }
+
+  .brandTop {
+    justify-content: space-between;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .brand .title {
+    overflow-wrap: anywhere;
+  }
+}
 </style>
