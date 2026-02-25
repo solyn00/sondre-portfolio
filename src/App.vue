@@ -708,7 +708,9 @@ a:hover { text-decoration: underline; }
 }
 
 .navLink {
-  flex: 0 0 auto;           /* hindrer at linkene krymper */
+  flex: 0 0 auto;
+  font-size: 15px;      /* 👈 smaller text */
+  white-space: nowrap; /* keep on one line */
 }
 
 .navLink:hover {
@@ -901,19 +903,26 @@ html, body {
   }
 
   /* NAV — centered, wrapping */
-  .nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    white-space: normal;
-    gap: 12px;
-    overflow-x: visible; /* CRITICAL */
-  }
+/* BASE (desktop first) */
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 
-  .navLink {
-    text-align: center;
-  }
+  flex-wrap: nowrap;          /* 🔒 single line on desktop */
+  white-space: nowrap;
+
+  gap: 10px;                  /* slightly tighter spacing */
+  min-width: 0;
+}
+
+.navLink {
+  font-size: 13px;            /* slightly smaller */
+  line-height: 1.2;
+  white-space: nowrap;        /* never wrap individual links */
+  text-align: center;
+}
 
   /* MAIN GRID — 1 column */
   .grid {
