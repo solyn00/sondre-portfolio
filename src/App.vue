@@ -409,6 +409,16 @@ onBeforeUnmount(() => {
   --muted: rgba(255, 255, 255, 0.70);
 }
 
+
+/* 🔒 iOS Safari flex overflow fix */
+.header,
+.header * {
+  min-width: 0;
+}
+
+
+
+
 .page,
 .header,
 .main,
@@ -419,9 +429,8 @@ onBeforeUnmount(() => {
 .header,
 .brand,
 .headerRight,
-.nav {
-  min-width: 0;           /* prevents flex children from forcing overflow */
-}
+
+
 
 .brand .title {
   overflow-wrap: anywhere;
@@ -696,16 +705,6 @@ a:hover { text-decoration: underline; }
 }
 .brand .name { font-size: 18px; font-weight: 700; }
 .brand .title { font-size: 13px; color: var(--muted); margin-top: 2px; }
-.nav {
-  display: flex;
-  flex-wrap: nowrap;        /* aldri bryt linje */
-  gap: 10px;
-  justify-content: flex-end;
-  white-space: nowrap;      /* holder links på én linje */
-  overflow-x: auto;         /* scroll hvis det blir for trangt */
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
-}
 
 .nav::-webkit-scrollbar {
   display: none;
@@ -870,25 +869,26 @@ html, body {
     overflow-wrap: anywhere;
   }
 
-  /* Nav wraps instead of forcing overflow */
+  /* ✅ MOBILE NAV (this fixes the width / zoom issue) */
   .nav {
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
     white-space: normal;
     gap: 12px;
+    overflow-x: visible; /* CRITICAL */
   }
 
-  /* ✅ 1 column cards on mobile (Projects/Skills/etc.) */
+  /* ✅ 1 column cards on mobile (Projects / Skills / etc.) */
   .grid {
     grid-template-columns: 1fr;
   }
 
   .card {
-    grid-column: 1 / -1; /* full width */
+    grid-column: 1 / -1;
   }
 
-  /* ✅ Case studies: Problem/Solution/Result stacked vertically */
+  /* ✅ Case studies stacked vertically */
   .caseGrid {
     grid-template-columns: 1fr;
   }
@@ -902,13 +902,13 @@ html, body {
     grid-column: 1 / -1;
   }
 
-  /* Slightly smaller photo */
+  /* Slightly smaller profile image */
   .profileImage {
     width: 150px;
     height: 150px;
   }
 
-  /* Optional: make long titles less huge */
+  /* Smaller titles on mobile */
   .card h3 {
     font-size: 15px;
     line-height: 1.25;
