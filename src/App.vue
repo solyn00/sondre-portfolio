@@ -674,6 +674,42 @@ body.light .themeSwitch .slider {
   padding-top: 16px;
 }
 
+@media (max-width: 600px) {
+  .page {
+    width: 100%;
+    padding: 16px 14px 28px;
+  }
+
+  .header {
+    position: relative;     /* avoid sticky quirks on iOS */
+    top: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px;
+    backdrop-filter: none;  /* optional: helps iOS rendering */
+  }
+
+  .brandTop {
+    justify-content: space-between;
+  }
+
+  .brand .name {
+    font-size: 16px;
+  }
+
+  .brand .title {
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+}
+
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
