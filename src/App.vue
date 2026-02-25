@@ -835,6 +835,27 @@ h3 { margin: 0 0 10px; font-size: 16px; }
   margin-right: auto;
 }
 
+/* ✅ Hard stop: never allow layout wider than the device */
+html, body {
+  max-width: 100%;
+  overflow-x: clip; /* better than hidden on iOS */
+}
+
+#app, .page, .header, .main, .section {
+  max-width: 100%;
+}
+
+/* ✅ Flex children that otherwise can force overflow on iOS */
+.header, .brand, .headerRight, .nav, .sectionHeader, .card {
+  min-width: 0;
+}
+
+/* ✅ Media elements can silently overflow */
+img, video, iframe, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
 
 
 .footer { padding-top: 18px; }
