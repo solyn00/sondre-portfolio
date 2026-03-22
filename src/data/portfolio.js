@@ -20,7 +20,7 @@ introMotivation:
     
     documents: {
     recommendations: import.meta.env.BASE_URL + "docs/Attester_merged.pdf",
-    transcript: import.meta.env.BASE_URL + "docs/Karakterutskrift_Digitalt_Signert.pdf",
+    transcript: import.meta.env.BASE_URL + "docs/Karakterutskrift_Digitalt_Signert_25_02_26_u_PN.pdf",
     cv: import.meta.env.BASE_URL + "docs/cv_engelsk.pdf",
   },
 
